@@ -1,0 +1,109 @@
+
+<form id="loginForm">
+　<h1>蛟龍祭ユーザー認証</h1>
+  <input type="text" id="username" placeholder="ユーザー名"><br>
+  <input type="password" id="password" placeholder="パスワード"><br>
+  <button type="submit" id="submit">ログイン</button>
+</form>
+
+<style>
+body {
+  background-color: #808080;
+}
+
+form {
+  width: 400px;
+  padding: 40px 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #000;
+  text-align: center;
+}
+
+form h1,form p {
+  color: white;
+  font-weight: 500;
+}
+
+form p {
+  font-size: 10px;
+}
+
+#username,#password{
+  border: 0;
+  background: none;
+  display: block;
+  margin: auto;
+  border: 2px solid #ff69b4;
+  padding: 15px 10px;
+  width: 200px;
+  color:white;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.25s;
+  text-align: center;
+}
+#username:focus,#password:focus {
+  width: 280px;
+  color:black;
+  background-color: #f0f8ff;
+}
+
+#submit{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #f0f8ff;
+  padding: 15px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 25px;
+  transition: 0.25s;
+  text-align: center;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #ff69b4;
+  border: 2px solid #ff69b4;
+}
+</style>
+<script>
+// JavaScript
+document.getElementById('loginForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  try {
+    const response = await fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      const token = data.token;
+      // トークンを保存し、適切なページにリダイレクトなどの処理を行う
+      console.log('ログイン成功:', token);
+		window.location.href　= 'https://drive.google.com/drive/folders/1JtNXsiCXrWKxAwZEquoSZjdzcqWvpBmU'
+    } else {
+      const errorData = await response.json();
+      console.error('ログイン失敗:', errorData.error);
+		alert("認証に失敗しました。")
+    }
+  } catch (error) {
+    console.error('ネットワークエラー:', error);
+	 alert("認証に失敗しました。")
+  }
+});
+
+</script>
