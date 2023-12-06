@@ -1,14 +1,14 @@
 
 <form id="loginForm">
-　<h1>蛟龍祭ユーザー認証</h1>
-  <input type="text" id="username" placeholder="ユーザー名"><br>
-  <input type="password" id="password" placeholder="パスワード"><br>
+　<h1>ユーザー認証</h1>
+  <input type="text" id="username" placeholder="ユーザーID"><br>
+  <input type="password" id="password" placeholder="Password"><br>
   <button type="submit" id="submit">ログイン</button>
 </form>
 
 <style>
 body {
-  background-color: #808080;
+  background-color: #000;
 }
 
 form {
@@ -28,7 +28,7 @@ form h1,form p {
 }
 
 form p {
-  font-size: 10px;
+  font-size: 24px;
 }
 
 #username,#password{
@@ -36,10 +36,10 @@ form p {
   background: none;
   display: block;
   margin: auto;
-  border: 2px solid #ff69b4;
+  border: 2px solid #00afff;
   padding: 15px 10px;
   width: 200px;
-  color:white;
+  color: white;
   outline: none;
   border-radius: 24px;
   transition: 0.25s;
@@ -68,8 +68,8 @@ form p {
 }
 
 #submit:hover {
-  background-color: #ff69b4;
-  border: 2px solid #ff69b4;
+  background-color: #00afff;
+  border: 2px solid #00afff;
 }
 </style>
 <script>
