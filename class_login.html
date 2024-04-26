@@ -1,0 +1,182 @@
+
+<title>クラス企画支出報告書ログイン</title>
+<form id="loginForm">
+　<h1>ユーザー認証</h1>
+  <input type="text" id="username" placeholder="ユーザーID"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button type="submit" id="submit">認証</button>
+</form>
+
+<style>
+body {
+  background-color: #000;
+}
+
+form {
+  width: 300px;
+  padding: 10px 15px 50px 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 2px solid #fff;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+}
+
+form h1,form p {
+  color: black;
+  font-weight: 500;
+}
+
+form p {
+  font-size: 36px;
+}
+
+#username,#password{
+  border: 0;
+  background: none;
+  display: block;
+  margin: auto;
+  border: 2px solid #00afff;
+  padding: 15px 10px;
+  width: 200px;
+  color: black;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.25s;
+  text-align: center;
+}
+#username:focus,#password:focus {
+  width: 250px;
+  color:black;
+  background-color: #fff;
+}
+
+#submit{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #000;
+  padding: 15px 10px;
+  width: 200px;
+  outline: none;
+  color: black;
+  border-radius: 25px;
+  transition: 0.25s;
+  text-align: center;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #00afff;
+  border: 2px solid #00afff;
+}
+</style>
+<script>
+json_data = {
+  "1-1": {
+    "PASS": "ZtP1mo8J",
+    "URL": "https://docs.google.com/spreadsheets/d/1wbAzs34cmmjyzLNOkd7Ez_Y4Ts2WbuxDxyJsiGISRhs/edit"
+  },
+  "1-2": {
+    "PASS": "meYUIR5t",
+    "URL": "https://docs.google.com/spreadsheets/d/1_vvp0lrtW-mKESnh4Qql9AQ1bYE0tYuzU-_KGMJkD9g/edit"
+  },
+  "1-3": {
+    "PASS": "s7tk6szy",
+    "URL": "https://docs.google.com/spreadsheets/d/1i9Xt-viCjPTUFKApQ5pf8WJDu6eFytRn59FpbH-8PVE/edit"
+  },
+  "1-4": {
+    "PASS": "PmSsybGz",
+    "URL": "https://docs.google.com/spreadsheets/d/1PfbHX8CkwfHw4dY2LDxtEouDup647YrtByfHZv-5H2g/edit"
+  },
+  "1-5": {
+    "PASS": "Q7p9RYfp",
+    "URL": "https://docs.google.com/spreadsheets/d/1ESGVZF7DTal6Y2r_buzgMsEEa9bCOyzD_92653qqGU8/edit"
+  },
+  "1-6": {
+    "PASS": "sFpuxPn5",
+    "URL": "https://docs.google.com/spreadsheets/d/1XgROMPLrBtpQ7rbxldVb5-7i7L3-s0TszSkDmgbIt9s/edit"
+  },
+  "1-7": {
+    "PASS": "PasAK2Rq",
+    "URL": "https://docs.google.com/spreadsheets/d/1_SfHgPIOKYDsvSS0LEJYhYn54PvUqgnalLFvSujQpRQ/edit"
+  },
+  "2-1": {
+    "PASS": "LW8Lpu4o",
+    "URL": "https://docs.google.com/spreadsheets/d/1OOmxA_RRSvlCXE2GQT2K-Hl6SFQ7d3eOdTKNWYpt6dQ/edit"
+  },
+  "2-2": {
+    "PASS": "FcR7XTTt",
+    "URL": "https://docs.google.com/spreadsheets/d/1yQdp50iNURxtfaa6nyZFx-hVjNMmFRARTJzJ0nWGWOI/edit"
+  },
+  "2-3": {
+    "PASS": "81ZiFq7U",
+    "URL": "https://docs.google.com/spreadsheets/d/1jFDBW8tITMPbJ90a3JuXsBVy41UrSd_kB8ydC3E_dbc/edit"
+  },
+  "2-4": {
+    "PASS": "FySHsasr",
+    "URL": "https://docs.google.com/spreadsheets/d/1hKiFqMJRBuvwIM2_qu0WAd3jOlaFl2YftKaxMahHCXE/edit"
+  },
+  "2-5": {
+    "PASS": "bHdPsmIJ",
+    "URL": "https://docs.google.com/spreadsheets/d/1CWL3N_TUNlHFY76rS9Vnzk3Xr9FjDIE3vYJWhEM_zlA/edit"
+  },
+  "2-6": {
+    "PASS": "ZhogS64S",
+    "URL": "https://docs.google.com/spreadsheets/d/1FzBIbxa9d7tbg3dqMB4oDr6kCjoGkd04ZSs3AdoS-ks/edit"
+  },
+  "2-7": {
+    "PASS": "L7EgXwvB",
+    "URL": "https://docs.google.com/spreadsheets/d/1Kf9XTiI2dYSFrAMeYx086cQ-pHuZk_MQYcGPLyLqiyQ/edit"
+  },
+  "3-1": {
+    "PASS": "s7DxY0J4",
+    "URL": "https://docs.google.com/spreadsheets/d/190YROWi2T-cSYZFof1PyfdKy3V7dWSm9-ooBAxV6uhc/edit"
+  },
+  "3-2": {
+    "PASS": "fbcfCk04",
+    "URL": "https://docs.google.com/spreadsheets/d/1TzzmGQo9EwUichww8hUPVUP4VYpEuagxaru-VBkC6j4/edit"
+  },
+  "3-3": {
+    "PASS": "XYXieJ6D",
+    "URL": "https://docs.google.com/spreadsheets/d/17UgyW38cmqaxgYCLW9ydwLe1_M-IFGfmARVsLtfuu9Y/edit"
+  },
+  "3-4": {
+    "PASS": "wsIKHaZR",
+    "URL": "https://docs.google.com/spreadsheets/d/1eULl7t_S3SPhDRf83z2Fy8c3__fG-jDOLOLx94KWtUo/edit"
+  },
+  "3-5": {
+    "PASS": "EYBF2uZA",
+    "URL": "https://docs.google.com/spreadsheets/d/17putqKN34dG0MWgdapuMl022agaSxb5P8ScexLgUzm8/edit"
+  },
+  "3-6": {
+    "PASS": "h94RNVJn",
+    "URL": "https://docs.google.com/spreadsheets/d/1jU9K-scH8hxzb7_e1OV4vWJAAM1fIuErCnvOqlLfIWM/edit"
+  },
+  "3-7": {
+    "PASS": "UTz93BNH",
+    "URL": "https://docs.google.com/spreadsheets/d/1BW0CJDz_YXV_mIZ3Zmgpe2WN4ewM94r6VRsSJ0EwuT0/edit"
+  }
+}
+
+
+// JavaScript
+document.getElementById('loginForm').addEventListener('submit', async (event) => {
+  event.preventDefault(); // フォームのデフォルトの送信を防止
+
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  if (password === json_data[username]?.PASS) { // ?を使用してundefinedチェック
+    const url = json_data[username].URL;
+    window.location.href = url;
+  } else {
+    alert("IDまたはPASSが違います。");
+  }
+});
+
+</script>
